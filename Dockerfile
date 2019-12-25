@@ -14,7 +14,6 @@
 	    dbus \
           default-jre-headless \
          libunixsocket-java \
-            lirc \
             net-tools \
             hping3 \
             wakeonlan \
