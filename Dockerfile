@@ -19,9 +19,13 @@
             wakeonlan \
 	    python-mysqldb \
             \
-        && cpanm \
+	 && cpanm \
+           Net::DBus \
+           Lirc::Client \
+           Crypt::Cipher::AES \
+	   Image::Grab \
         && rm -rf /root/.cpanm \
-        && sed -i s,/dev/lircd,/var/run/lirc/lircd,g /usr/local/share/perl/5.24.1/Lirc/Client.pm \
+        && sed -i s,/dev/lircd,/var/run/lirc/lircd,g /usr/local/share/perl/5.28.1/Lirc/Client.pm \
         && wget https://github.com/AsamK/signal-cli/releases/download/v${L_SIGNAL_CLI}/signal-cli-${L_SIGNAL_CLI}.tar.gz \
         && tar xf signal-cli-${L_SIGNAL_CLI}.tar.gz -C /opt \
         && ln -sf /opt/signal-cli-${L_SIGNAL_CLI}/bin/signal-cli /usr/local/bin/ \
