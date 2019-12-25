@@ -1,0 +1,34 @@
+pipeline {
+  environment {
+    registry = "registry.myhomehub.de/fhem"
+    registryCredential = ''
+    dockerImage = ''
+  }
+  agent any
+  stages {
+   
+    stage('Building image') {
+      steps{
+        script {
+          dockerImage = docker.build registry + ":latest"
+        }
+      }
+    }
+
+  
+    stage('Deploy Image') {
+      steps{
+        script {
+          docker.withRegistry( 'https://registry.myhomehub.de/fhem', '' ) {
+            dockerImage.push()
+          }
+        }
+      }
+    }
+    stage('Remove Unused docker image') {
+      steps{
+        sh "docker rmi $registry:latest"
+      }
+    }
+  }
+}
