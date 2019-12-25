@@ -22,7 +22,6 @@
             \
         && cpanm \
            Net::DBus \
-           Lirc::Client \
             Crypt::Cipher::AES \
 	   Image::Grab \
         && rm -rf /root/.cpanm \
