@@ -21,9 +21,6 @@
 	    python-mysqldb \
             \
         && cpanm \
-           Net::DBus \
-            Crypt::Cipher::AES \
-	   Image::Grab \
         && rm -rf /root/.cpanm \
         && sed -i s,/dev/lircd,/var/run/lirc/lircd,g /usr/local/share/perl/5.24.1/Lirc/Client.pm \
         && wget https://github.com/AsamK/signal-cli/releases/download/v${L_SIGNAL_CLI}/signal-cli-${L_SIGNAL_CLI}.tar.gz \
