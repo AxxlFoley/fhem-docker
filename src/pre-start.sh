@@ -23,7 +23,7 @@ if [ $NUMBER != "undef" ]; then
    
    echo $NUMBER
    echo "Starting signal-cli"
-   sudo -u signal-cli /usr/local/bin/signal-cli -u $NUMBER --config /opt/fhem/.local/share/signal-cli/ daemon --system &
+   sudo -u fhem /usr/local/bin/signal-cli -u $NUMBER --config /opt/fhem/.local/share/signal-cli/ daemon --system &
 
    echo "Wait $SLEEPTIME to give signal-cli time to come up"
    sleep $SLEEPTIME
