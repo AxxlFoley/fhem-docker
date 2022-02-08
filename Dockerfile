@@ -39,8 +39,8 @@
         && ln -sf /opt/signal-cli-${L_SIGNAL_CLI}/bin/signal-cli /usr/local/bin/ 
  
 
-    RUN  wget https://download.bell-sw.com/java/11.0.14+9/bellsoft-jdk11.0.14+9-linux-amd64.deb	\
-        && apt-get install -qqy --no-install-recommends ./bellsoft-jdk11.0.14+9-linux-amd64.deb 
+    RUN  wget https://download.bell-sw.com/java/17.0.2+9/bellsoft-jdk17.0.2+9-linux-amd64.deb	\
+        && apt-get install -qqy --no-install-recommends ./bellsoft-jdk17.0.2+9-linux-amd64.deb 
 
     RUN  apt-get purge -qqy \
             build-essential \
