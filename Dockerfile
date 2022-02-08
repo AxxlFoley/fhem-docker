@@ -7,16 +7,16 @@
     # Install base environment
     RUN DEBIAN_FRONTEND=noninteractive apt-get update \
         && DEBIAN_FRONTEND=noninteractive apt-get install -qqy --no-install-recommends \
-            cpanminus \
-            build-essential \
-            wget \
-            shared-mime-info \
+        cpanminus \
+        build-essential \
+        wget \
+        shared-mime-info \
 	    dbus \
-          default-jre-headless \
-         libunixsocket-java \
-            net-tools \
-            hping3 \
-            wakeonlan \
+        default-jre-headless \
+        libunixsocket-java \
+        net-tools \
+        hping3 \
+        wakeonlan \
 	    python-mysqldb \
         libnet-dbus-perl \  
         haveged \
@@ -28,7 +28,10 @@
            Net::DBus \
            Lirc::Client \
            Crypt::Cipher::AES \
-	   Image::Grab \
+           Protocol::DBus \
+           Data::Peek \
+           Net::FTPSSL \
+	       Image::Grab \
         && rm -rf /root/.cpanm \
         && sed -i s,/dev/lircd,/var/run/lirc/lircd,g /usr/local/share/perl/5.28.1/Lirc/Client.pm \
         && wget https://github.com/AsamK/signal-cli/releases/download/v${L_SIGNAL_CLI}/signal-cli-${L_SIGNAL_CLI}-Linux.tar.gz \
