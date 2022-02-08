@@ -17,7 +17,10 @@
         net-tools \
         hping3 \
         wakeonlan \
-	    python-mysqldb \
+	  #  python-mysqldb \
+        ansible \
+        python3-pip \
+        python3-mysqldb \
         libnet-dbus-perl \  
         haveged \
       #  default-jdk \
@@ -41,6 +44,8 @@
 
     RUN  wget https://download.bell-sw.com/java/17.0.2+9/bellsoft-jdk17.0.2+9-linux-amd64.deb	\
         && apt-get install -qqy --no-install-recommends ./bellsoft-jdk17.0.2+9-linux-amd64.deb 
+
+
 
     RUN  apt-get purge -qqy \
             build-essential \
