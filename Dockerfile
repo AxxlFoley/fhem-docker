@@ -36,16 +36,18 @@
         && sed -i s,/dev/lircd,/var/run/lirc/lircd,g /usr/local/share/perl/5.28.1/Lirc/Client.pm \
         && wget https://github.com/AsamK/signal-cli/releases/download/v${L_SIGNAL_CLI}/signal-cli-${L_SIGNAL_CLI}-Linux.tar.gz \
         && tar xf signal-cli-${L_SIGNAL_CLI}-Linux.tar.gz -C /opt \
-        && ln -sf /opt/signal-cli-${L_SIGNAL_CLI}/bin/signal-cli /usr/local/bin/ \
-        && apt-get purge -qqy \
+        && ln -sf /opt/signal-cli-${L_SIGNAL_CLI}/bin/signal-cli /usr/local/bin/ 
+ 
+
+    RUN  wget https://download.bell-sw.com/java/11.0.14+9/bellsoft-jdk11.0.14+9-linux-amd64.deb	\
+        && apt-get install -qqy --no-install-recommends ./bellsoft-jdk11.0.14+9-linux-amd64.deb 
+
+    RUN        && apt-get purge -qqy \
             build-essential \
             cpanminus \
             subversion \
         && apt-get autoremove -qqy && apt-get clean \
         && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
-    RUN  wget https://download.bell-sw.com/java/11.0.14+9/bellsoft-jdk11.0.14+9-linux-amd64.deb	\
-        && apt-get install -qqy --no-install-recommends ./bellsoft-jdk11.0.14+9-linux-amd64.deb 
 
     COPY ./src/pre-start.sh /pre-start.sh
     COPY ./src/000_fhem-nopasswd /etc/sudoers.d/
