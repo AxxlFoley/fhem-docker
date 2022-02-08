@@ -18,6 +18,11 @@
             hping3 \
             wakeonlan \
 	    python-mysqldb \
+        libnet-dbus-perl \  
+        haveged \
+        default-jdk \
+        systemd \
+        nano \
             \
 	 && cpanm \
            Net::DBus \
