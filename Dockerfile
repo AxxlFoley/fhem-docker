@@ -12,7 +12,7 @@
         wget \
         shared-mime-info \
 	    dbus \
-        default-jre-headless \
+      #  default-jre-headless \
         libunixsocket-java \
         net-tools \
         hping3 \
@@ -20,7 +20,7 @@
 	    python-mysqldb \
         libnet-dbus-perl \  
         haveged \
-        default-jdk \
+      #  default-jdk \
         systemd \
         nano \
             \
@@ -44,6 +44,8 @@
         && apt-get autoremove -qqy && apt-get clean \
         && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+    RUN  wget https://download.bell-sw.com/java/11.0.14+9/bellsoft-jdk11.0.14+9-linux-amd64.deb	\
+        && apt-get install -qqy --no-install-recommends ./bellsoft-jdk11.0.14+9-linux-amd64.deb \
 
     COPY ./src/pre-start.sh /pre-start.sh
     COPY ./src/000_fhem-nopasswd /etc/sudoers.d/
