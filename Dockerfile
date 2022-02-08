@@ -1,7 +1,7 @@
     ARG BASE_IMAGE="fhem/fhem"
     ARG BASE_IMAGE_TAG="latest"
-    FROM ${BASE_IMAGE}:${BASE_IMAGE_TAG}
-
+   # FROM ${BASE_IMAGE}:${BASE_IMAGE_TAG}
+    FROM ghcr.io/fhem/fhem/fhem-docker:dev-buster-bullseye
     ARG L_SIGNAL_CLI="0.10.3"
 
     # Install base environment
