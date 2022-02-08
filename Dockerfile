@@ -2,7 +2,7 @@
     ARG BASE_IMAGE_TAG="latest"
     FROM ${BASE_IMAGE}:${BASE_IMAGE_TAG}
 
-    ARG L_SIGNAL_CLI="0.6.2"
+    ARG L_SIGNAL_CLI="0.10.3"
 
     # Install base environment
     RUN DEBIAN_FRONTEND=noninteractive apt-get update \
@@ -26,9 +26,9 @@
 	   Image::Grab \
         && rm -rf /root/.cpanm \
         && sed -i s,/dev/lircd,/var/run/lirc/lircd,g /usr/local/share/perl/5.28.1/Lirc/Client.pm \
-        && wget https://github.com/AsamK/signal-cli/releases/download/v${L_SIGNAL_CLI}/signal-cli-${L_SIGNAL_CLI}.tar.gz \
-        && tar xf signal-cli-${L_SIGNAL_CLI}.tar.gz -C /opt \
-        && ln -sf /opt/signal-cli-${L_SIGNAL_CLI}/bin/signal-cli /usr/local/bin/ \
+        && wget https://github.com/AsamK/signal-cli/releases/download/v${L_SIGNAL_CLI}/signal-cli-${L_SIGNAL_CLI}-Linux.tar.gz \
+        && tar xf signal-cli-${L_SIGNAL_CLI}-Linux.tar.gz -C /opt \
+        && ln -sf /opt/signal-cli-${L_SIGNAL_CLI}-Linux/bin/signal-cli /usr/local/bin/ \
         && apt-get purge -qqy \
             build-essential \
             cpanminus \
