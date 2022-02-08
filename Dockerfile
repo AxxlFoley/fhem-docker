@@ -45,7 +45,7 @@
         && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
     RUN  wget https://download.bell-sw.com/java/11.0.14+9/bellsoft-jdk11.0.14+9-linux-amd64.deb	\
-        && apt-get install -qqy --no-install-recommends ./bellsoft-jdk11.0.14+9-linux-amd64.deb \
+        && apt-get install -qqy --no-install-recommends ./bellsoft-jdk11.0.14+9-linux-amd64.deb 
 
     COPY ./src/pre-start.sh /pre-start.sh
     COPY ./src/000_fhem-nopasswd /etc/sudoers.d/
