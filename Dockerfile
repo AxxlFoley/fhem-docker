@@ -26,6 +26,7 @@
       #  default-jdk \
         systemd \
         nano \
+        python-is-python3 \
             \
 	 && cpanm \
            Net::DBus \
