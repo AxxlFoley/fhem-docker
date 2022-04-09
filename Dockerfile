@@ -5,7 +5,7 @@
     ARG L_SIGNAL_CLI="0.10.3"
 
     # Install base environment
-    RUN DEBIAN_FRONTEND=noninteractive apt-get update && aot-get upgrade \
+    RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get upgrade \
         && DEBIAN_FRONTEND=noninteractive apt-get install -qqy --no-install-recommends \
         cpanminus \
         build-essential \
