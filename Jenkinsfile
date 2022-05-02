@@ -14,7 +14,7 @@ pipeline {
       steps{
         script {
           sh "docker pull fhem/fhem:latest"
-          dockerImage = docker.build registry + ":latest"
+          dockerImage = docker.build(registry + ":latest",  "--no-cache .")
         }
       }
     }
