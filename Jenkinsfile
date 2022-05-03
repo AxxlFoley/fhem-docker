@@ -13,7 +13,7 @@ pipeline {
     stage('Building image') {
       steps{
         script {
-          sh "docker pull fhem/fhem:latest"
+          sh "docker pull ghcr.io/fhem/fhem/fhem-docker:dev-bullseye"
           dockerImage = docker.build(registry + ":latest",  "--no-cache .")
         }
       }
