@@ -2,7 +2,7 @@
     ARG BASE_IMAGE_TAG="latest"
    # FROM ${BASE_IMAGE}:${BASE_IMAGE_TAG}
     FROM ghcr.io/fhem/fhem/fhem-docker:dev-bullseye
-    ARG L_SIGNAL_CLI="0.10.3"
+    ARG L_SIGNAL_CLI="0.11.3"
 
     # Install base environment
     RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get -y upgrade \
